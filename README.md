@@ -1,5 +1,6 @@
-# sandbox-for-nextjs-and-graphql
-Sandbox for Next.js + GraphQL
+# sandbox-for-nextjs-and-apollo-server
+Sandbox for Next.js + Apollo server
+
 ## Architecture
 
 ![](https://i.gyazo.com/362aa902bc833ab00cd119dcf3a4bcda.png)
