@@ -7,11 +7,6 @@ Sandbox for Next.js + Apollo server
 
 
 ## Get started
-Set API URL to env.
-```
-mv .env.sample .env
-# set your API URL.
-```
 Start dev server.
 
 ```
