@@ -1,0 +1,40 @@
+{
+  "name": "sandbox-nextjs-ssg-csr",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "deploy": "serverless",
+    "export": "next build && next export"
+  },
+  "dependencies": {
+    "@sls-next/serverless-component": "^1.18.0",
+    "apollo-server": "^2.19.2",
+    "apollo-server-micro": "^2.19.2",
+    "bulma": "^0.9.1",
+    "graphql": "^15.5.0",
+    "micro": "^9.3.4",
+    "next": "10.0.5",
+    "node-fetch": "^2.6.1",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "serverless": "^2.20.1",
+    "swr": "^0.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.22",
+    "@types/react": "^17.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.13.0",
+    "@typescript-eslint/parser": "^4.13.0",
+    "eslint": "^7.18.0",
+    "eslint-config-prettier": "^7.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react": "^7.22.0",
+    "prettier": "^2.2.1",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.3"
+  }
+}
