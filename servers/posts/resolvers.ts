@@ -1,55 +1,28 @@
 import { API_ROOT_PATH } from '../../src/config/constants';
 import fetch from 'node-fetch';
 
+const DB = {
+  posts: [
+    { id: 1, title: 'foo', content: 'foooo' },
+    { id: 2, title: 'bar', content: 'baaaa' },
+    { id: 3, title: 'baz', content: 'bazzz' },
+  ],
+};
+
 export const resolvers = {
   Query: {
-    post: async (_, { id }) => {
-      try {
-        const response = await fetch(`${API_ROOT_PATH}/getPost?id=${id}`);
-        const post = await response.json();
-        return post.data;
-      } catch (e) {
-        console.error(e);
-        throw e;
-      }
-    },
-
-    posts: async () => {
-      try {
-        const response = await fetch(`${API_ROOT_PATH}/getPosts`);
-        const postRes = await response.json();
-        return postRes.data;
-      } catch (e) {
-        console.error(e);
-        throw e;
-      }
-    },
+    post: (_, { id }) => DB.posts.filter((u) => u.id === id)[0],
+    posts: () => DB.posts,
   },
 
   Mutation: {
-    addPost: async (_, { title, content }) => {
-      try {
-        const response = await fetch(`${API_ROOT_PATH}/addPost`, {
-          method: 'POST',
-          body: JSON.stringify({ title, content }),
-        });
-        const posts = await response.json();
-        return posts.data;
-      } catch (e) {
-        console.error(e);
-        throw e;
-      }
+    addPost: (_, { title, content }) => {
+      const post = { id: DB.posts.length + 1, title, content };
+      DB.posts.push(post);
+      return post;
     },
-
-    deletePost: async (_, { id }) => {
-      try {
-        await fetch(`${API_ROOT_PATH}/deletePost?id=${id}`, {
-          method: 'DELETE',
-        });
-      } catch (e) {
-        console.error(e);
-        throw e;
-      }
+    deletePost: (_, { id }) => {
+      DB.posts = DB.posts.filter((u) => u.id !== id);
       return { result: true };
     },
   },

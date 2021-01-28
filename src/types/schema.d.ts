@@ -11,33 +11,23 @@ export type Scalars = {
   Float: number;
 };
 
-export type Post = {
-  __typename?: 'Post';
-  id?: Maybe<Scalars['Int']>;
-  title?: Maybe<Scalars['String']>;
-  content?: Maybe<Scalars['String']>;
-};
+
+
+
+
+
+
 
 export type DeleteResponse = {
   __typename?: 'DeleteResponse';
   result?: Maybe<Scalars['Boolean']>;
 };
 
-export type Query = {
-  __typename?: 'Query';
-  post?: Maybe<Post>;
-  posts?: Maybe<Array<Maybe<Post>>>;
-};
-
-
-export type QueryPostArgs = {
-  id?: Maybe<Scalars['Int']>;
-};
-
 export type Mutation = {
   __typename?: 'Mutation';
   addPost?: Maybe<Post>;
   deletePost?: Maybe<DeleteResponse>;
+  addUser?: Maybe<User>;
 };
 
 
@@ -49,4 +39,40 @@ export type MutationAddPostArgs = {
 
 export type MutationDeletePostArgs = {
   id?: Maybe<Scalars['Int']>;
+};
+
+
+export type MutationAddUserArgs = {
+  name?: Maybe<Scalars['String']>;
+};
+
+export type Post = {
+  __typename?: 'Post';
+  id?: Maybe<Scalars['Int']>;
+  title?: Maybe<Scalars['String']>;
+  content?: Maybe<Scalars['String']>;
+};
+
+export type Query = {
+  __typename?: 'Query';
+  post?: Maybe<Post>;
+  posts?: Maybe<Array<Maybe<Post>>>;
+  user?: Maybe<User>;
+  users?: Maybe<Array<Maybe<User>>>;
+};
+
+
+export type QueryPostArgs = {
+  id?: Maybe<Scalars['Int']>;
+};
+
+
+export type QueryUserArgs = {
+  id?: Maybe<Scalars['Int']>;
+};
+
+export type User = {
+  __typename?: 'User';
+  id?: Maybe<Scalars['Int']>;
+  name?: Maybe<Scalars['String']>;
 };
