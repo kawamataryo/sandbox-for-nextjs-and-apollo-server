@@ -10,6 +10,7 @@ export const resolvers: Config['resolvers'] = {
         return post.data;
       } catch (e) {
         console.error(e);
+        throw e;
       }
     },
 
@@ -20,6 +21,7 @@ export const resolvers: Config['resolvers'] = {
         return postRes.data;
       } catch (e) {
         console.error(e);
+        throw e;
       }
     },
   },
@@ -35,6 +37,7 @@ export const resolvers: Config['resolvers'] = {
         return posts.data;
       } catch (e) {
         console.error(e);
+        throw e;
       }
     },
 
@@ -45,7 +48,7 @@ export const resolvers: Config['resolvers'] = {
         });
       } catch (e) {
         console.error(e);
-        return { result: false };
+        throw e;
       }
       return { result: true };
     },
