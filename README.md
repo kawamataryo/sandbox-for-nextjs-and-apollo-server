@@ -3,8 +3,9 @@ Sandbox for Next.js + Apollo server
 
 ## Architecture
 
-![](https://i.gyazo.com/362aa902bc833ab00cd119dcf3a4bcda.png)
-
+- Next.js
+- Apollo Server
+- Hasura
 
 ## Get started
 Start dev server.
