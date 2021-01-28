@@ -1,7 +1,7 @@
-import { Config } from 'apollo-server-micro';
 import { API_ROOT_PATH } from '../../src/config/constants';
+import fetch from 'node-fetch';
 
-export const resolvers: Config['resolvers'] = {
+export const resolvers = {
   Query: {
     post: async (_, { id }) => {
       try {

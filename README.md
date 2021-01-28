@@ -5,18 +5,18 @@ Sandbox for Next.js + Apollo server
 
 - Next.js
 - Apollo Server
-- Hasura
 
 ## Get started
-Start dev server.
+Start dev servers.
 
-```
+```bash
+# Start users graphql server
+yarn dev:server:users
+
+# Start posts graphql server
+yarn dev:server:post
+
+# Start Next.js
 yarn dev
-```
-
-Build.
-
-```
-yarn build
 ```
 
