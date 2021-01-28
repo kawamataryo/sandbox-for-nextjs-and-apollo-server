@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "deploy": "serverless",
-    "export": "next build && next export"
+    "export": "next build && next export",
+    "generate:types": "graphql-codegen"
   },
   "dependencies": {
     "@sls-next/serverless-component": "^1.18.0",
@@ -25,6 +26,8 @@
     "swr": "^0.4.0"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^1.20.1",
+    "@graphql-codegen/typescript": "^1.20.2",
     "@types/node": "^14.14.22",
     "@types/react": "^17.0.0",
     "@typescript-eslint/eslint-plugin": "^4.13.0",

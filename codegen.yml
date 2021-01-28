@@ -1,0 +1,5 @@
+schema: './src/apollo/type-defs.ts'
+generates:
+  ./src/types/schema.d.ts:
+    plugins:
+      - typescript
