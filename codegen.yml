@@ -3,3 +3,4 @@ generates:
   ./src/types/schema.d.ts:
     plugins:
       - typescript
+      - typescript-operations
