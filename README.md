@@ -5,6 +5,9 @@ Sandbox for Next.js + Apollo server
 
 - Next.js
 - Apollo Server
+- Apollo Federation
+
+![](https://i.gyazo.com/84508126bf658bc05c582fb1cb7dbd6b.png)
 
 ## Get started
 Start dev servers.
