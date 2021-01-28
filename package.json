@@ -12,6 +12,7 @@
     "generate:types": "graphql-codegen"
   },
   "dependencies": {
+    "@apollo/client": "^3.3.7",
     "@sls-next/serverless-component": "^1.18.0",
     "apollo-server": "^2.19.2",
     "apollo-server-micro": "^2.19.2",
