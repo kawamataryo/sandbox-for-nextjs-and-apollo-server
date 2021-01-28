@@ -1,47 +1,46 @@
 import * as React from 'react';
-import useSWR from 'swr';
 import Layout from '../components/layouts/Layout';
 import { Form, FormState } from '../components/Form';
 import { Article } from '../components/Article';
 import { Header } from '../components/Header';
-import { Post } from '../lib/types';
-import { fetcher } from '../lib/fetcher';
 import { NextPage } from 'next';
-import { gql, useMutation, useQuery } from '@apollo/client';
-import { Mutation, Query } from '../types/schema';
+import { useMutation, useQuery } from '@apollo/client';
+import {
+  Mutation,
+  MutationAddPostArgs,
+  MutationDeletePostArgs,
+  Query,
+} from '../types/schema';
+import {
+  ADD_POST_MUTATION,
+  DELETE_POST_MUTATION,
+  POSTS_QUERY,
+} from '../apollo/queries';
 
 const Home: NextPage = () => {
   // 一覧データの取得
-  const { data, error, refetch } = useQuery<Query['posts']>(gql`
-    query Posts {
-      posts {
-        id
-        title
-        content
-      }
-    }
-  `);
+  const { data, refetch } = useQuery<{ posts: Query['posts'] }>(POSTS_QUERY);
 
-  const [addPostMutation] = useMutation<Mutation['addPost']>(gql`
-    mutation AddPost($title: String!, $content: String!) {
-      addPost(title: $title, content: $content) {
-        id
-        title
-        content
-      }
-    }
-  `)
+  const [addPostMutation] = useMutation<
+    Mutation['addPost'],
+    MutationAddPostArgs
+  >(ADD_POST_MUTATION);
+
+  const [deletePostMutation] = useMutation<
+    Mutation['deletePost'],
+    MutationDeletePostArgs
+  >(DELETE_POST_MUTATION);
 
   // 投稿の追加
   const addPost = async (form: FormState) => {
-    addPostMutation({ variables: form })
-    refetch()
+    await addPostMutation({ variables: form });
+    await refetch();
   };
 
   // 投稿の削除
   const deletePost = async (id: number) => {
-    await fetch(`/api/posts/${id}`, { method: 'DELETE' });
-    // await mutate();
+    await deletePostMutation({ variables: { id } });
+    await refetch();
   };
 
   return (

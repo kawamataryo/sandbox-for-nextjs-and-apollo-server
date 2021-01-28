@@ -1,0 +1,35 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+type DeleteResponse {
+    result: Boolean
+}
+
+type Mutation {
+    addPost(content: String, title: String): Post
+    deletePost(id: Int): DeleteResponse
+}
+
+type Post {
+    content: String
+    id: Int
+    title: String
+}
+
+type Query {
+    post(id: Int): Post
+    posts: [Post]
+}
+
+enum CacheControlScope {
+    PRIVATE
+    PUBLIC
+}
+
+
+"The `Upload` scalar type represents a file upload."
+scalar Upload

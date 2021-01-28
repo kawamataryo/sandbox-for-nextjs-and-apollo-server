@@ -23,8 +23,7 @@
     "node-fetch": "^2.6.1",
     "react": "17.0.1",
     "react-dom": "17.0.1",
-    "serverless": "^2.20.1",
-    "swr": "^0.4.0"
+    "serverless": "^2.20.1"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^1.20.1",

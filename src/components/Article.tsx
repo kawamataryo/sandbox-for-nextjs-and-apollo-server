@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { Post } from '../lib/types';
 import Link from 'next/link';
+import { Maybe, Post } from '../types/schema';
 
 type ArticleProps = {
-  post: Post;
+  post: Maybe<Post>;
   onDelete: (id: number) => void;
 };
 
