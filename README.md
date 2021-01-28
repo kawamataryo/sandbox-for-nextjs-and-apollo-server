@@ -10,7 +10,7 @@ Sandbox for Next.js + Apollo server
 ![](https://i.gyazo.com/84508126bf658bc05c582fb1cb7dbd6b.png)
 
 ## Get started
-Start dev servers.
+Start GraphQL servers.
 
 ```bash
 # Start users graphql server
@@ -18,8 +18,11 @@ yarn dev:server:users
 
 # Start posts graphql server
 yarn dev:server:post
+```
 
-# Start Next.js
+Start Next.js
+
+```
 yarn dev
 ```
 
