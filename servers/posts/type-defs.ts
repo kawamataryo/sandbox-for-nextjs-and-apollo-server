@@ -5,6 +5,7 @@ export const typeDefs = gql`
     id: Int
     title: String
     content: String
+    user: User
   }
 
   type DeleteResponse {
@@ -19,5 +20,9 @@ export const typeDefs = gql`
   type Mutation {
     addPost(title: String, content: String): Post
     deletePost(id: Int): DeleteResponse
+  }
+
+  extend type User @key(fields: "id") {
+    id: Int! @external
   }
 `;
